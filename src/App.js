@@ -2,21 +2,25 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Board from './components/Board/Board';
+import { status, priorities } from './utils/data';
 
 function App() {
   const [tickets, setTickets] = useState([]);
   const [users, setUsers] = useState([]);
-  const [group, setGroup] = useState('user');
-  const [order, setOrder] = useState('title');
+  const defaultGroup = localStorage.getItem('selectedGroup');
+  const defaultOrder = localStorage.getItem('selectedOrder');
 
-  const priorities = ["no priority", "low", "medium", "high", "urgent"];
-  const status = ["backlog", "todo", "in progress", "done", "cancelled"];
+  const [group, setGroup] = useState(defaultGroup ? defaultGroup : 'status');
+  const [order, setOrder] = useState(defaultOrder ? defaultOrder : 'priority');
+
 
   const handleGroupChange = (groupSelected) => {
     setGroup(groupSelected);
+    localStorage.setItem("selectedGroup", groupSelected);
   }
   const handleOrderChange = (orderSelected) => {
     setOrder(orderSelected);
+    localStorage.setItem("selectedOrder", orderSelected);
   }
 
   useEffect(() => {
@@ -33,7 +37,6 @@ function App() {
       console.log("Unable to fetch data! ", error);
     }
   }
-  console.log(group);
 
   return (
     <div className="App">
@@ -42,17 +45,17 @@ function App() {
         <div className='app_boards'>
           {
             group === 'status' && status.map((opt, id) => (
-              <Board order={order} title={opt} key={id} tickets={tickets} group={group} />
+              <Board order={order} data={opt} key={id} tickets={tickets} users={users} group={group} />
             ))
           }
           {
             group === 'user' && users.map((opt) => (
-              <Board order={order} title={opt?.name} key={opt.id} tickets={tickets} users={users} group={group} userId={opt?.id} />
+              <Board order={order} data={opt} key={opt.id} tickets={tickets} users={users} group={group} userId={opt?.id} />
             ))
           }
           {
             group === 'priority' && priorities.map((opt, id) => (
-              <Board order={order} title={opt} level={id} key={id} tickets={tickets} group={group} />
+              <Board order={order} data={opt} level={id} key={id} tickets={tickets} users={users} group={group} />
             ))
           }
         </div>

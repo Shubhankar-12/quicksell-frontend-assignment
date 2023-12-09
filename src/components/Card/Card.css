@@ -21,6 +21,9 @@
 .card_info {
   text-transform: capitalize;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 .card_footer {
   display: flex;
