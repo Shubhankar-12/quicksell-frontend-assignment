@@ -1,0 +1,17 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.boards_container {
+  flex: 1;
+  width: 100%;
+  overflow-x: auto;
+  padding: 10px 20px;
+}
+.app_boards {
+  display: flex;
+  min-width: fit-content;
+  gap: 30px;
+}
