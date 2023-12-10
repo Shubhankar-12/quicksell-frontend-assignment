@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Kanban Board App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project is a Kanban board application built using ReactJS. It allows users to interact with ticket data fetched from the [Quicksell API](https://api.quicksell.co/v1/internal/frontend-assignment). Users can group and sort tickets based on different criteria, making it a versatile tool for project management. See the project live at [Live Link](https://quicksell-frontend-shubh.netlify.app/)
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Data Interaction:**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  - Fetches ticket data from the Quicksell API.
+  - Displays the fetched data on a Kanban board.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Grouping Options:**
 
-### `npm test`
+  - Group tickets by Status, User, or Priority.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Sorting Options:**
 
-### `npm run build`
+  - Sort tickets by Priority or Title.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Priority Levels:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - Tickets are categorized with priority levels ranging from Urgent (4) to No Priority (0).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Styling:**
 
-### `npm run eject`
+  - Visually appealing and responsive design.
+  - Pure CSS is used for styling.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Icons:**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  - Icons are integrated for various elements of the application using react-icon.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **State Persistence:**
+  - Saves the user's view state (grouping and sorting options) even after a page reload using local storage.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Setup
 
-## Learn More
+1. **Clone the Repository:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   git clone https://github.com/Shubhankar-12/quicksell-frontend-assignment
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Navigate to the Project Directory:**
 
-### Code Splitting
+   ```bash
+   cd kanban-board-app
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. **Install Dependencies:**
 
-### Analyzing the Bundle Size
+   ```bash
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4. **Run the Application:**
 
-### Making a Progressive Web App
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. **Access the Application:**
+   Open your browser and go to `http://localhost:3000`.
