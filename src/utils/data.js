@@ -5,6 +5,8 @@ import { TbCircleDotted } from "react-icons/tb";
 import { RxHalf2 } from "react-icons/rx";
 import { GiNetworkBars } from "react-icons/gi";
 
+const bgColors = ["#B57136", "#868728", "#4D9446", "#5F80E4"];
+
 export const priorities = [
     { title: "no priority", color: "gray", icon: <BsThreeDots /> },
     { title: "low", color: "lightgray", icon: <GiNetworkBars /> },
@@ -45,3 +47,7 @@ export const statusIcons = {
 export const generateIntials = (name) => {
     return name.split(' ').map(word => word.charAt(0)).join('');
 }
+export const getRandomColor = () => {
+    const randomIndex = Math.floor(Math.random() * bgColors.length);
+    return bgColors[randomIndex];
+};

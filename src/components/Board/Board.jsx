@@ -3,7 +3,7 @@ import { IoMdAdd } from "react-icons/io";
 import { SlOptions } from "react-icons/sl";
 import Card from '../Card/Card';
 import UserIcon from '../UserIcon/UserIcon';
-import { generateIntials, priorities, statusIcons } from '../../utils/data';
+import { generateIntials, getRandomColor, priorities, statusIcons } from '../../utils/data';
 
 const Board = (props) => {
     const { tickets, users, group, level, userId, order, data } = props;
@@ -26,7 +26,7 @@ const Board = (props) => {
             <div className='board'>
                 <div className='board_top'>
                     <div className="board_top_name">
-                        <span><UserIcon intials={generateIntials(data?.name)} available={data?.available} /></span>
+                        <span><UserIcon intials={generateIntials(data?.name)} available={data?.available} bgColor={getRandomColor()} /></span>
                         <p>{data?.name} </p>
                         <span>{filteredTickets.length}</span>
                     </div>
@@ -38,7 +38,14 @@ const Board = (props) => {
                 <div className="board_container">
                     {
                         filteredTickets.map((ticket) => {
-                            return (<Card ticket={ticket} key={ticket.id} icon={priorities[ticket?.priority].icon} group={group} statusIcon={statusIcons[ticket?.status.toLowerCase()].icon} statusColor={statusIcons[ticket?.status.toLowerCase()].color} />)
+                            return (<Card
+                                ticket={ticket}
+                                key={ticket.id}
+                                icon={priorities[ticket?.priority].icon}
+                                group={group} statusIcon={statusIcons[ticket?.status.toLowerCase()].icon}
+                                statusColor={statusIcons[ticket?.status.toLowerCase()].color}
+                                bgColor={getRandomColor()}
+                            />)
                         })
                     }
                 </div>
@@ -64,7 +71,15 @@ const Board = (props) => {
                     {
                         filteredTickets.map((ticket) => {
                             const user = users?.find(user => user.id === ticket.userId)
-                            return (<Card ticket={ticket} key={ticket.id} user={user} group={group} statusIcon={statusIcons[ticket?.status.toLowerCase()].icon} statusColor={statusIcons[ticket?.status.toLowerCase()].color} icon="" />)
+                            return (<Card
+                                ticket={ticket}
+                                key={ticket.id}
+                                user={user}
+                                group={group}
+                                statusIcon={statusIcons[ticket?.status.toLowerCase()].icon}
+                                statusColor={statusIcons[ticket?.status.toLowerCase()].color}
+                                bgColor={getRandomColor()}
+                                icon="" />)
                         })
                     }
                 </div>
@@ -88,7 +103,15 @@ const Board = (props) => {
                 {
                     filteredTickets.map((ticket) => {
                         const user = users?.find(user => user.id === ticket.userId)
-                        return (<Card ticket={ticket} key={ticket.id} statusIcon="" icon={priorities[ticket?.priority].icon} user={user} group={group} statusColor="" />)
+                        return (<Card
+                            ticket={ticket}
+                            key={ticket.id}
+                            statusIcon=""
+                            icon={priorities[ticket?.priority].icon}
+                            user={user}
+                            group={group}
+                            bgColor={getRandomColor()}
+                            statusColor="" />)
                     })
                 }
             </div>
