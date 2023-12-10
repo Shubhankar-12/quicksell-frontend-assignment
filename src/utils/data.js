@@ -1,7 +1,7 @@
 import { BsThreeDots, BsFillInfoSquareFill } from "react-icons/bs"
 import { FaCheckCircle } from "react-icons/fa";
 import { FaCircleXmark, FaRegCircle } from "react-icons/fa6";
-import { MdOutlineNoBackpack } from "react-icons/md";
+import { TbCircleDotted } from "react-icons/tb";
 import { RxHalf2 } from "react-icons/rx";
 import { GiNetworkBars } from "react-icons/gi";
 
@@ -13,7 +13,7 @@ export const priorities = [
     { title: "urgent", color: "orange", icon: <BsFillInfoSquareFill /> }
 ];
 export const status = [
-    { title: "backlog", color: "black", icon: <MdOutlineNoBackpack /> },
+    { title: "backlog", color: "black", icon: <TbCircleDotted /> },
     { title: "todo", color: "lightgrey", icon: < FaRegCircle /> },
     { title: "in progress", color: "#EBCB62", icon: <RxHalf2 /> },
     { title: "done", color: "#606ACB", icon: <FaCheckCircle /> },
@@ -23,7 +23,7 @@ export const status = [
 export const statusIcons = {
     backlog: {
         color: "black",
-        icon: <MdOutlineNoBackpack />,
+        icon: <TbCircleDotted />,
     },
     todo: {
         color: "lightgrey",

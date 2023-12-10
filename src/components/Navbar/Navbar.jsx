@@ -32,6 +32,7 @@ const Navbar = ({ group, order, onGroupchange, onOrderChange }) => {
     const [groupedBy, setGroupedBy] = useState(group);
     const [orderedBy, setOrderedBy] = useState(order);
 
+
     const handleGroupChange = (e) => {
         setGroupedBy(e.target.value);
         onGroupchange(e.target.value);
@@ -41,6 +42,8 @@ const Navbar = ({ group, order, onGroupchange, onOrderChange }) => {
         setOrderedBy(e.target.value);
         onOrderChange(e.target.value);
     }
+
+
 
     return (
         <div className='nav'>
@@ -52,7 +55,7 @@ const Navbar = ({ group, order, onGroupchange, onOrderChange }) => {
                 <span>Display</span>
                 <FaAngleDown />
             </div>
-            {expandMore && <div className="dropdown">
+            {expandMore && <div className="dropdown" >
                 <div className='display'>
                     <p>Grouping</p>
                     <select

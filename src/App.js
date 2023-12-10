@@ -39,7 +39,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App scroll-container">
       <Navbar group={group} order={order} onGroupchange={handleGroupChange} onOrderChange={handleOrderChange} />
       <div className='boards_container'>
         <div className='app_boards'>

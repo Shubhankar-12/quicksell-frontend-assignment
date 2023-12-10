@@ -7,7 +7,6 @@ import { generateIntials, priorities, statusIcons } from '../../utils/data';
 
 const Board = (props) => {
     const { tickets, users, group, level, userId, order, data } = props;
-    console.log(statusIcons['in progress']);
 
     let filteredTickets = [];
     if (group === 'status')

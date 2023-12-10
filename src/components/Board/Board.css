@@ -1,11 +1,17 @@
 .board {
-  min-width: 250px;
+  min-width: 390px;
   padding: 5px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .board_top {
   display: flex;
   justify-content: space-between;
   padding: 5px;
+  width: 100%;
+  text-transform: capitalize;
 }
 .board_top_name {
   display: flex;
@@ -40,4 +46,8 @@
 }
 .board_top_options svg:hover {
   color: black;
+}
+.board_container {
+  overflow-y: auto;
+  height: 75vh;
 }
